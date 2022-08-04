@@ -4,7 +4,7 @@ function Heading() {
     const date = new Date();
     const currentTime = date.getHours();
 
-    let greeting;
+    let greeting = "";
 
     const customStyle = {
         color: ""
