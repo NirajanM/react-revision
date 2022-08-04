@@ -13,12 +13,12 @@ let mystyle = {
 let currentDate = new Date();
 let currentHour = parseInt(currentDate.getHours());
 
-if ((0 <= currentHour) && (currentHour < 12)) {
+if (currentHour < 12) {
     text = "Good morning";
     mystyle.color = "red";
 
 }
-else if ((12 <= currentHour) && (currentHour < 18)) {
+else if (currentHour < 18) {
     text = "Good Afternoon";
     mystyle.color = "green";
 }
