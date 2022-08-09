@@ -2,11 +2,11 @@ import React, { useState } from "react";
 
 function App() {
   let currentTime = new Date().toLocaleTimeString();
-  let [time, setTime] = useState(currentTime.slice(0, 7));
+  let [time, setTime] = useState(currentTime);
 
   let newTime = () => {
     currentTime = new Date().toLocaleTimeString();
-    setTime(currentTime.slice(0, 7));
+    setTime(currentTime);
   };
   setInterval(newTime, 1000);
   return (
