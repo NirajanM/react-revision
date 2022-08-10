@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 
 function Item(props) {
-  const [style, setStyle] = useState({ textDecoration: "none" });
+  const [isClicked, setIsClicked] = useState(false);
   function handleClick() {
-    setStyle({
-      textDecoration: style.textDecoration === "none" ? "line-through" : "none"
+    setIsClicked((pv) => {
+      return !pv;
     });
   }
   return (
-    <li style={style} onClick={handleClick}>
+    <li
+      style={{ textDecoration: isClicked ? "line-through" : "none" }}
+      onClick={handleClick}
+    >
       {props.itemText}
     </li>
   );
