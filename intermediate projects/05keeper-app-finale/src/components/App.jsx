@@ -12,6 +12,13 @@ function App() {
       return [...pv, note];
     });
   }
+  function handleDelete(id) {
+    setNotes(() => {
+      return notes.filter((note, index) => {
+        return index !== id;
+      });
+    });
+  }
   return (
     <div>
       <Header />
@@ -23,6 +30,7 @@ function App() {
             id={index}
             title={note.title}
             content={note.content}
+            onDel={handleDelete}
           />
         );
       })}
