@@ -8,12 +8,29 @@ function Item(props) {
     });
   }
   return (
-    <li
-      style={{ textDecoration: isClicked ? "line-through" : "none" }}
-      onClick={handleClick}
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignContent: "space-between"
+      }}
     >
-      {props.itemText}
-    </li>
+      <li
+        onClick={handleClick}
+        style={{
+          textDecoration: isClicked ? "line-through" : "none"
+        }}
+      >
+        {props.itemText}
+      </li>
+      <button
+        onClick={() => {
+          props.deleteItem(props.id); //passing it inside function like this so that it won't get called on render
+        }}
+      >
+        delete
+      </button>
+    </div>
   );
 }
 
